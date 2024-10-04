@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Sauvegarde des données
+# Projet Fenikkusu
+
+# Informations
+# en = Ethernet,
+# wl = Wireless LAN (WLAN),
+# ww for wireless wide area network (WWAN)
+
+
+MACOUTPUT=`cat /sys/class/net/en*/address`
+if [[ "${MACOUTPUT,,}" == "" ]];
+then
+	MACOUTPUT=`cat /sys/class/net/wl*/address`
+	if [[ "${MACOUTPUT,,}" == "" ]];
+	then
+		MACOUTPUT=`cat /sys/class/net/ww*/address`
+	fi
+fi
+
+mkdir -p /etc/fenikkusu/$MACOUTPUT
+
+mkdir -p /etc/fenikkusu/$MACOUTPUT/usr /etc/fenikkusu/$MACOUTPUT/usr/share /etc/fenikkusu/$MACOUTPUT/usr/share/X11 /etc/fenikkusu/$MACOUTPUT/usr/share/X11/xorg.conf.d
+cp -dR /usr/share/X11/xorg.conf.d/* /etc/fenikkusu/$MACOUTPUT/usr/share/X11/xorg.conf.d/
+
+mkdir -p /etc/fenikkusu/$MACOUTPUT/etc /etc/fenikkusu/$MACOUTPUT/etc/X11 /etc/fenikkusu/$MACOUTPUT/etc/X11/xorg.conf.d
+cp -dR /etc/X11/xorg.conf.d/* /etc/fenikkusu/$MACOUTPUT/etc/X11/xorg.conf.d/
+cp -dR /etc/fstab /etc/fenikkusu/$MACOUTPUT/etc/fstab
+
+getent passwd | while IFS=: read -r name password uid gid gecos home shell; do
+  if [[ $home == *"/home"* ]]; then
+	  mkdir -p /etc/fenikkusu/$MACOUTPUT/home/ /etc/fenikkusu/$MACOUTPUT/home/$name /etc/fenikkusu/$MACOUTPUT/home/$name/.config /etc/fenikkusu/$MACOUTPUT/home/$name/.config/autostart
+	  mv /home/$name/.config/autostart/lxrandr-autostart.desktop /etc/fenikkusu/$MACOUTPUT/home/$name/.config/autostart/
+  fi
+done
+
+chmod 777 -R /etc/fenikkusu/$MACOUTPUT

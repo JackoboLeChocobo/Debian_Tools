@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Sauvegarde des données
+# Projet Fenikkusu
+
+# Informations
+# en = Ethernet,
+# wl = Wireless LAN (WLAN),
+# ww for wireless wide area network (WWAN)
+
+
+MACOUTPUT=`cat /sys/class/net/en*/address`
+if [[ "${MACOUTPUT,,}" == "" ]];
+then
+	MACOUTPUT=`cat /sys/class/net/wl*/address`
+	if [[ "${MACOUTPUT,,}" == "" ]];
+	then
+		MACOUTPUT=`cat /sys/class/net/ww*/address`
+	fi
+fi
+
+cp -dR /etc/fenikkusu/$MACOUTPUT/* /

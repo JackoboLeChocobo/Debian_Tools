@@ -1,0 +1,13 @@
+[Unit]
+Description=Chargement
+DefaultDependencies=no
+Before=local-fs-pre.target
+Wants=local-fs-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/fenikkusu/load_data
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sysinit.target
