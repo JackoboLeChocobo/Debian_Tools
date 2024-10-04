@@ -23,6 +23,10 @@ from gi.repository import GLib, Gio, Gtk, GObject, Gdk, GdkPixbuf
 #                <attribute name="label">_Reconfigure Openbox</attribute>
 #                <attribute name="action">app.reconfigure</attribute>
 #            </item>
+#            <item>
+#                <attribute name="label" translatable="yes">_New</attribute>
+#                <attribute name="action">app.new_menu</attribute>
+#            </item>
 
 MENU_XML = """
 <?xml version="1.0" encoding="UTF-8"?>
@@ -31,10 +35,6 @@ MENU_XML = """
     <submenu>
         <attribute name="label">_File</attribute>
         <section>
-            <item>
-                <attribute name="label" translatable="yes">_New</attribute>
-                <attribute name="action">app.new_menu</attribute>
-            </item>
             <item>
                 <attribute name="label">_Save</attribute>
                 <attribute name="action">app.save_menu</attribute>
