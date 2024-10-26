@@ -1,5 +1,5 @@
 # Debian Tools
-Outils & Données utilisés pour le système d'exploitation Debian & Fenikkusu
+Outils & Données utilisés pour le système d'exploitation Debian & Usagi OS
 
 ## Sources
 
