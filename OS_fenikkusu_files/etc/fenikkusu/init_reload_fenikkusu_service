@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Initialisation / Rechargement des services de sauvegarde/chargement automatique des données
-# Projet Fenikkusu
-
-systemctl daemon-reload
-systemctl enable save_data --now
-systemctl enable load_data --now

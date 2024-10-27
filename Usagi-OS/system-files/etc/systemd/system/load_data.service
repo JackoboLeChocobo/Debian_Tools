@@ -1,0 +1,10 @@
+[Unit]
+Description=Chargement
+
+[Service]
+Type=oneshot
+ExecStart=/etc/usagi/load_data
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sysinit.target

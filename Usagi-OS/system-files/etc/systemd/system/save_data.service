@@ -1,0 +1,10 @@
+[Unit]
+Description=Sauvegarde
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/etc/usagi/save_data
+
+[Install]
+WantedBy=multi-user.target

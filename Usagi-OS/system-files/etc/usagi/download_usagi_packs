@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Sauvegarde des données
+# Projet Usagi OS
+
+rm -dR /etc/usagi/Usagi-OS
+cd /etc/usagi/
+git clone https://github.com/JackoboLeChocobo/Usagi-OS.git
+chmod +x /etc/usagi/Usagi-OS/packages/*.sh
+/etc/usagi/Usagi-OS/packages/setup.sh
