@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+  <menu id="menu-5778198" label="Bureautique" icon="/etc/usagi/openbox-icons/applications-office.svg">
+    <item label="Calculatrice" icon="/etc/usagi/openbox-icons/calculatrice.svg">
+      <action name="Execute">
+        <execute>galculator</execute>
+      </action>
+    </item>
+    <item label="Evince" icon="/etc/usagi/openbox-icons/evince.svg">
+      <action name="Execute">
+        <execute>evince --new-window</execute>
+      </action>
+    </item>
+    <item label="Gestionnaire de fichiers" icon="/etc/usagi/openbox-icons/system-file-manager.svg">
+      <action name="Execute">
+        <execute>pcmanfm</execute>
+      </action>
+    </item>
+    <item label="Peazip" icon="/etc/usagi/openbox-icons/application-x-archive.svg">
+      <action name="Execute">
+        <execute>peazip</execute>
+      </action>
+    </item>
+    <item label="Xsane" icon="/etc/usagi/openbox-icons/scanner.svg">
+      <action name="Execute">
+        <execute>xsane</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-7801934" label="Graphisme" icon="/etc/usagi/openbox-icons/applications-painting.svg">
+    <item label="Aucune Application" icon="">
+      <action name="Execute">
+        <execute>command</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-7703554" label="Internet" icon="/etc/usagi/openbox-icons/web-browser.svg">
+    <item label="Aucune Application" icon="">
+      <action name="Execute">
+        <execute>command</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-9187887" label="Jeux" icon="/etc/usagi/openbox-icons/applications-games.svg">
+    <item label="Aucune Application" icon="">
+      <action name="Execute">
+        <execute>command</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-1750814" label="Multimedia" icon="/etc/usagi/openbox-icons/applications-multimedia.svg">
+    <item label="Aucune Application">
+      <action name="Execute">
+        <execute>command</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-3614522" label="Programmation" icon="/etc/usagi/openbox-icons/applications-development.svg">
+    <item label="Aucune Application" icon="">
+      <action name="Execute">
+        <execute>command</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-3172793" label="Système" icon="/etc/usagi/openbox-icons/applications-system.svg">
+    <item label="New Item">
+      <action name="Execute">
+        <execute>blueman-manager</execute>
+      </action>
+    </item>
+    <item label="Configuration du clavier et de la souris" icon="/etc/usagi/openbox-icons/clavier.svg">
+      <action name="Execute">
+        <execute>lxinput</execute>
+      </action>
+    </item>
+    <item label="Configuration des disques" icon="/etc/usagi/openbox-icons/gnome-disks.svg">
+      <action name="Execute">
+        <execute>gnome-disks</execute>
+      </action>
+    </item>
+    <item label="Configuration des écrans" icon="/etc/usagi/openbox-icons/ecran.svg">
+      <action name="Execute">
+        <execute>lxrandr</execute>
+      </action>
+    </item>
+    <item label="Configuration de l'écran de vérouillage" icon="/etc/usagi/openbox-icons/screensaver.svg">
+      <action name="Execute">
+        <execute>xscreensaver-settings</execute>
+      </action>
+    </item>
+    <item label="Configuration des imprimantes" icon="/etc/usagi/openbox-icons/imprimante.svg">
+      <action name="Execute">
+        <execute>system-config-printer</execute>
+      </action>
+    </item>
+    <item label="Configuration du mot de passe" icon="/etc/usagi/openbox-icons/passwords.svg">
+      <action name="Execute">
+        <execute>userpasswd</execute>
+      </action>
+    </item>
+    <item label="Configuration des raccourcis clavier" icon="/etc/usagi/openbox-icons/preferences-desktop-keyboard-shortcuts.svg">
+      <action name="Execute">
+        <execute>lxhotkey --gui=gtk</execute>
+      </action>
+    </item>
+    <item label="Configuration du réseau" icon="/etc/usagi/openbox-icons/connman.svg">
+      <action name="Execute">
+        <execute>connman-gtk</execute>
+      </action>
+    </item>
+    <item label="Contrôle du volume - PulseAudio" icon="/etc/usagi/openbox-icons/pavucontrol.svg">
+      <action name="Execute">
+        <execute>pavucontrol</execute>
+      </action>
+    </item>
+    <item label="Date et Heure" icon="/etc/usagi/openbox-icons/time-admin.svg">
+      <action name="Execute">
+        <execute>time-admin</execute>
+      </action>
+    </item>
+    <item label="Gestionnaire de paquets Synaptic" icon="/etc/usagi/openbox-icons/synaptic.svg">
+      <action name="Execute">
+        <execute>synaptic-pkexec</execute>
+      </action>
+    </item>
+    <item label="Gestionnaire des tâches" icon="/etc/usagi/openbox-icons/utilities-system-monitor.svg">
+      <action name="Execute">
+        <execute>lxtask</execute>
+      </action>
+    </item>
+    <item label="LxTerminal" icon="/etc/usagi/openbox-icons/utilities-terminal.svg">
+      <action name="Execute">
+        <execute>lxterminal</execute>
+      </action>
+    </item>
+    <item label="Renseignements personnels" icon="/etc/usagi/openbox-icons/user-info.svg">
+      <action name="Execute">
+        <execute>userinfo</execute>
+      </action>
+    </item>
+    <item label="Utilisateurs et groupes" icon="/etc/usagi/openbox-icons/user-group.svg">
+      <action name="Execute">
+        <execute>users-admin</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="menu-5503361" label="Usagi OS" icon="/etc/usagi/openbox-icons/applications-system.svg">
+    <item label="Installation des packages Usagi" icon="/etc/usagi/openbox-icons/synaptic.svg">
+      <action name="Execute">
+        <execute>/etc/usagi/download_usagi_packs</execute>
+      </action>
+    </item>
+    <item label="Page Github" icon="/etc/usagi/openbox-icons/github.svg">
+      <action name="Execute">
+        <execute>/usr/bin/xdg-open https://github.com/JackoboLeChocobo/Usagi-OS</execute>
+      </action>
+    </item>
+    <item label="Site Officiel" icon="/etc/usagi/openbox-icons/applications-internet.svg">
+      <action name="Execute">
+        <execute>/usr/bin/xdg-open https://jackobo.info?datas=usagi-os</execute>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>
