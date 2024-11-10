@@ -20,3 +20,10 @@ then
 fi
 
 cp -dR /etc/usagi/$MACOUTPUT/* /
+
+modprobe zram
+RAMSIZE=`free -g | awk '/Mem\:/ { print $2 }'`
+chmod 777 /sys/block/zram0/disksize
+echo $(((RAMSIZE*1000000000))) > /sys/block/zram0/disksize
+mkswap -L zramswap /dev/zram0
+swapon -p 100 /dev/zram0

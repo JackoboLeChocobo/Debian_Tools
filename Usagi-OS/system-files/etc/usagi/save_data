@@ -36,3 +36,8 @@ getent passwd | while IFS=: read -r name password uid gid gecos home shell; do
 done
 
 chmod 777 -R /etc/usagi/$MACOUTPUT
+
+swapoff /dev/zram0
+chmod 777 /sys/block/zram0/reset
+echo 1 > /sys/block/zram0/reset
+rmmod zram
