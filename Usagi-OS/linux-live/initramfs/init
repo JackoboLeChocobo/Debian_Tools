@@ -24,7 +24,7 @@ debug_start
 # load some modules manually first, then modprobe everything we have
 init_devs
 init_aufs
-init_zram
+# init_zram
 
 # modprobe all devices excluding network drivers
 modprobe_everything -v /drivers/net/

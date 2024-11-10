@@ -66,6 +66,11 @@ rm /home/usagi/.bash_history
 rm -dR /etc/usagi/Usagi-OS
 rm -dR /etc/usagi/*:*:*:*:*:*
 
+swapoff /dev/zram0
+chmod 777 /sys/block/zram0/reset
+echo 1 > /sys/block/zram0/reset
+rmmod zram
+
 #Create files
 mksquashfs /bin 	$LIVEKITDATA/$LIVEKITNAME/modules/usagi-os-bin.$BEXT 		-comp xz -b 1024K -Xbcj x86 -always-use-fragments -keep-as-directory || exit
 mksquashfs /etc 	$LIVEKITDATA/$LIVEKITNAME/modules/usagi-os-etc.$BEXT 		-comp xz -b 1024K -Xbcj x86 -always-use-fragments -keep-as-directory -e /etc/fstab  || exit
