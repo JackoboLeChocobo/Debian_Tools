@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Sauvegarde des données
-# Projet Usagi OS
-
-/etc/usagi/Usagi-OS/packages/setup.sh
