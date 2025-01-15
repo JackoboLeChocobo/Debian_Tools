@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Sauvegarde des données
+# Projet Tatsuki OS
+
+# Informations
+# en = Ethernet,
+# wl = Wireless LAN (WLAN),
+# ww for wireless wide area network (WWAN)
+
+
+MACOUTPUT=`cat /sys/class/net/en*/address`
+if [[ "${MACOUTPUT,,}" == "" ]];
+then
+	MACOUTPUT=`cat /sys/class/net/wl*/address`
+	if [[ "${MACOUTPUT,,}" == "" ]];
+	then
+		MACOUTPUT=`cat /sys/class/net/ww*/address`
+	fi
+fi
+
+mkdir -p /etc/tatsuki/$MACOUTPUT
+
+mkdir -p /etc/tatsuki/$MACOUTPUT/usr /etc/tatsuki/$MACOUTPUT/usr/share /etc/tatsuki/$MACOUTPUT/usr/share/X11 /etc/tatsuki/$MACOUTPUT/usr/share/X11/xorg.conf.d
+cp -dR /usr/share/X11/xorg.conf.d/* /etc/tatsuki/$MACOUTPUT/usr/share/X11/xorg.conf.d/
+
+mkdir -p /etc/tatsuki/$MACOUTPUT/etc /etc/tatsuki/$MACOUTPUT/etc/X11 /etc/tatsuki/$MACOUTPUT/etc/X11/xorg.conf.d
+cp -dR /etc/X11/xorg.conf.d/* /etc/tatsuki/$MACOUTPUT/etc/X11/xorg.conf.d/
+cp -dR /etc/fstab /etc/tatsuki/$MACOUTPUT/etc/fstab
+
+getent passwd | while IFS=: read -r name password uid gid gecos home shell; do
+  if [[ $home == *"/home"* ]]; then
+	  mkdir -p /etc/tatsuki/$MACOUTPUT/home/ /etc/tatsuki/$MACOUTPUT/home/$name /etc/tatsuki/$MACOUTPUT/home/$name/.config /etc/tatsuki/$MACOUTPUT/home/$name/.config/autostart
+	  mv /home/$name/.config/autostart/lxrandr-autostart.desktop /etc/tatsuki/$MACOUTPUT/home/$name/.config/autostart/
+  fi
+done
+
+chmod 777 -R /etc/tatsuki/$MACOUTPUT
+
+swapoff /dev/zram0
+chmod 777 /sys/block/zram0/reset
+echo 1 > /sys/block/zram0/reset
+rmmod zram

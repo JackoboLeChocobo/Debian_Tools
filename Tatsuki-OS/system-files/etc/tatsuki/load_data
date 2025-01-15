@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Sauvegarde des données
-# Projet Usagi OS
+# Projet Tatsuki OS
 
 # Informations
 # en = Ethernet,
@@ -19,7 +19,7 @@ then
 	fi
 fi
 
-cp -dR /etc/usagi/$MACOUTPUT/* /
+cp -dR /etc/tatsuki/$MACOUTPUT/* /
 
 modprobe zram
 RAMSIZE=`free -g | awk '/Mem\:/ { print $2 }'`

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Sauvegarde des données
+# Projet Tatsuki OS
+
+rm -dR /etc/tatsuki/Usagi-OS
+cd /etc/tatsuki/
+git clone https://github.com/JackoboLeChocobo/Usagi-OS.git
+chmod +x /etc/tatsuki/Tatsuki-OS/packages/*.sh
+/etc/tatsuki/Tatsuki-OS/packages/setup.sh
